@@ -56,7 +56,7 @@ const Liked = async () => {
                 lg:text-7xl
                 font-bold
               ">
-                Liked Songs
+                Liked Posts
               </h1>
             </div>
           </div>

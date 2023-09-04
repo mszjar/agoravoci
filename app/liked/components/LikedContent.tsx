@@ -35,7 +35,7 @@ const LikedContent: React.FC<LikedContentProps> = ({
         px-6
         text-neutral-400
       ">
-        No liked songs.
+        No liked posts.
       </div>
     )
   }

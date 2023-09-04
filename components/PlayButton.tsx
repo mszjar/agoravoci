@@ -9,7 +9,7 @@ const PlayButton = () => {
         rounded-full
         flex
         items-center
-        bg-blue-500
+        bg-blue-400
         p-4
         drop-shadow-md
         translate
