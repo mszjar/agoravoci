@@ -33,17 +33,17 @@ export interface Database {
       }
       liked_songs: {
         Row: {
-          created_at: string | null
+          created_at: string
           song_id: number
           user_id: string
         }
         Insert: {
-          created_at?: string | null
+          created_at?: string
           song_id: number
           user_id: string
         }
         Update: {
-          created_at?: string | null
+          created_at?: string
           song_id?: number
           user_id?: string
         }
@@ -140,30 +140,30 @@ export interface Database {
       }
       songs: {
         Row: {
-          title: string | null
           author: string | null
-          created_at: string | null
+          created_at: string
           id: number
           image_path: string | null
           song_path: string | null
+          title: string | null
           user_id: string | null
         }
         Insert: {
-          title?: string | null
           author?: string | null
-          created_at?: string | null
+          created_at?: string
           id?: number
           image_path?: string | null
           song_path?: string | null
+          title?: string | null
           user_id?: string | null
         }
         Update: {
-          title?: string | null
           author?: string | null
-          created_at?: string | null
+          created_at?: string
           id?: number
           image_path?: string | null
           song_path?: string | null
+          title?: string | null
           user_id?: string | null
         }
         Relationships: [
