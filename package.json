@@ -43,6 +43,6 @@
   "devDependencies": {
     "@types/uniqid": "^5.3.2",
     "encoding": "^0.1.13",
-    "supabase": "^1.82.6"
+    "supabase": "^1.88.0"
   }
 }
