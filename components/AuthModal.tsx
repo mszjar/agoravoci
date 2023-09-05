@@ -30,7 +30,7 @@ const AuthModal = () => {
 
   return (
     <Modal
-      title="Welcome back"
+      title="Agoravoci"
       description="Log in to your account"
       isOpen={isOpen}
       onChange={onChange}
