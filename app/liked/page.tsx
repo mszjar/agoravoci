@@ -47,7 +47,7 @@ const Liked = async () => {
               md:mt-0
             ">
               <p className="hidden md:block font-semibold text-sm">
-                Playlist
+                Creator's List
               </p>
               <h1 className="
                 text-white
@@ -56,7 +56,7 @@ const Liked = async () => {
                 lg:text-7xl
                 font-bold
               ">
-                Liked Posts
+                Most Valuable
               </h1>
             </div>
           </div>
