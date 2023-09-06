@@ -10,9 +10,9 @@ const getSong = async (id: string): Promise<Song[]> => {
   const { data, error } = await supabase
     .from("songs")
     .select()
-    .eq("id", `${id}`)
-    .limit(1)
-    .single();
+    .eq("id", `${id}`);
+  /*.limit(1)
+    .single();*/
 
   if (error) {
     console.log(error.message);
