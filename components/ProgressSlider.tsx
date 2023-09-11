@@ -26,9 +26,9 @@ const ProgressSlider: React.FC<ProgressSliderProps> = ({
         select-none
         touch-none
         w-full
-        h-1
+        h-2
         cursor-pointer
-        bg-gray-300
+        bg-gray-950
         rounded-full
       "
       defaultValue={[0]}
@@ -43,6 +43,7 @@ const ProgressSlider: React.FC<ProgressSliderProps> = ({
           absolute
           rounded-full
           h-full
+          pb-2
         "
         style={{ width: `${progress}%` }}
       />
@@ -52,6 +53,7 @@ const ProgressSlider: React.FC<ProgressSliderProps> = ({
           relative
           h-full
           rounded-full
+          pb-2
         "
       >
       </RadixSlider.Track>
