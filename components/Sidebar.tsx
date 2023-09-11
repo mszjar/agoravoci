@@ -55,6 +55,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
         player.activeId && "h-[calc(100%-80px)]"
       )}
     >
+      {/* Left Sidebar */}
       <div
         className="
           hidden
@@ -83,7 +84,9 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
           </div>
         </Box>
       </div>
+      {/* Main Content */}
       <main className="h-full flex-1 overflow-y-auto py-2">{children}</main>
+      {/* Right Sidebar */}
       <div
         className="
           hidden

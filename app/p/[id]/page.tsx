@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import Image from "next/image";
 import getSong from "@/actions/getSong";
+import useLoadImage from "@/hooks/useLoadImage";
+
 
 export const revalidate = 0;
 
@@ -10,6 +12,9 @@ interface SongItemProps {
 
 const song: React.FC<SongItemProps> = async ({ params }) => {
   const song = await getSong(params.id);
+  // const imagePath = useLoadImage(song[0]);
+  // console.log(song)
+  
   return (
     <div
       className="
@@ -41,7 +46,7 @@ const song: React.FC<SongItemProps> = async ({ params }) => {
               lg:w-44
             "
             >
-              <Image fill alt="Playlist" src="/images/liked.png" />
+              <Image fill alt="Playlist" src={"/images/liked.png"}/>
             </div>
             <div
               className="

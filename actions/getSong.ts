@@ -11,8 +11,6 @@ const getSong = async (id: string): Promise<Song[]> => {
     .from("songs")
     .select()
     .eq("id", `${id}`);
-  /*.limit(1)
-    .single();*/
 
   if (error) {
     console.log(error.message);
