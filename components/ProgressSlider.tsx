@@ -1,19 +1,22 @@
-"user client";
-
 import * as RadixSlider from "@radix-ui/react-slider";
 
-interface SliderProps {
+interface ProgressSliderProps {
   value?: number;
   onChange?: (value: number) => void;
-};
+  duration?: number;
+}
 
-const Slider: React.FC<SliderProps> = ({
-  value = 1,
-  onChange
+const ProgressSlider: React.FC<ProgressSliderProps> = ({
+  value = 0,
+  onChange,
+  duration = 0
 }) => {
   const handleChange = (newValue: number[]) => {
     onChange?.(newValue[0]);
-  }
+  };
+
+  const progress = (value / duration) * 100;
+
   return (
     <RadixSlider.Root
       className="
@@ -23,35 +26,37 @@ const Slider: React.FC<SliderProps> = ({
         select-none
         touch-none
         w-full
-        h-10
+        h-1
         cursor-pointer
+        bg-gray-300
+        rounded-full
       "
-      defaultValue={[1]}
+      defaultValue={[0]}
       value={[value]}
       onValueChange={handleChange}
-      max={1}
-      step={0.1}
-      aria-label="Volume"
+      max={duration}
+      aria-label="Progress"
     >
+      <RadixSlider.Range
+        className="
+          bg-blue-500
+          absolute
+          rounded-full
+          h-full
+        "
+        style={{ width: `${progress}%` }}
+      />
       <RadixSlider.Track
         className="
-          bg-neutral-600
+          bg-gray-500
           relative
-          grow
+          h-full
           rounded-full
-          h-[3px]
         "
       >
-        <RadixSlider.Range
-          className="
-            bg-white
-            absolute
-            rounded-full
-            h-full
-          "/>
       </RadixSlider.Track>
     </RadixSlider.Root>
-   );
-}
+  );
+};
 
-export default Slider;
+export default ProgressSlider;
