@@ -112,7 +112,16 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
 
   return (
     <>
-      <div className="flex-1 h-1 bg-gray-300 rounded-full">
+      <div className="flex-1 h-1 bg-gray-300 rounded-full cursor-pointer"
+      onClick={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const width = rect.width;
+        const newProgress = (x / width) * 100;
+        setProgress(newProgress);
+        sound?.seek((newProgress / 100) * sound?.duration());
+      }}
+      >
         <div className="h-full bg-blue-500 rounded-full" style={{ width: `${progress}%` }}></div>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 h-full">
@@ -214,6 +223,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
               className="cursor-pointer"
               size={34}
             />
+
             <Slider
               value={volume}
               onChange={(value) => setVolume(value)}
