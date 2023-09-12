@@ -47,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({
       className={twMerge(`
         h-fit
         bg-gradient-to-b
-        from-teal-800
+        from-gray-500
         p-6
       `, className)}
     >
@@ -64,7 +64,7 @@ const Header: React.FC<HeaderProps> = ({
           gap-x-2
           items-center
         ">
-          <button className="
+          {/* <button className="
             rounded-full
             bg-black
             flex
@@ -85,7 +85,7 @@ const Header: React.FC<HeaderProps> = ({
             transition
           ">
             <RxCaretRight className="text-white" size={35}/>
-          </button>
+          </button> */}
         </div>
         <div className="flex md:hidden gap-x-2 items-center">
           <button className="

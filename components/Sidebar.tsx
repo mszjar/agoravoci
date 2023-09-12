@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
+import { AiFillHeart } from "react-icons/ai";
 import Box from "./Box";
 import SidebarItem from "./SidebarItem";
 import Library from "./Library";
@@ -34,6 +35,12 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
         active: pathname === "/search",
         href: "/search",
       },
+      {
+        icon: AiFillHeart,
+        label: "Liked",
+        active: pathname === "/liked",
+        href: "/liked",
+      },
     ],
     [pathname]
   );
@@ -45,9 +52,10 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
       flex
       h-full
     `,
-        player.activeId && "h-[calc(100%-80px)]"
+        player.activeId && "h-[calc(100%-200px)]" && "py-1"
       )}
     >
+      {/* Left Sidebar */}
       <div
         className="
           hidden
@@ -56,11 +64,12 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
           gap-y-2
           bg-black
           h-full
-          w-[300px]
-          p-2
+          w-[160px]
+          py-2
+          pl-2
         "
       >
-        <Box className="overflow-y-auto h-full">
+        <Box className="overflow-y-auto h-full rounded-lg">
           <div
             className="
               flex
@@ -76,20 +85,23 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
           </div>
         </Box>
       </div>
-      <main className="h-full flex-1 overflow-y-auto py-2">{children}</main>
+      {/* Main Content */}
+      <main className="h-full flex-1 overflow-y-auto p-2">{children}</main>
+      {/* Right Sidebar */}
       <div
         className="
           hidden
-          md:flex
+          xl:flex
           flex-col
           gap-y-2
           bg-black
           h-full
           w-[300px]
-          p-2
+          py-2
+          pr-2
         "
       >
-        <Box className="overflow-y-auto h-full">
+        <Box className="overflow-y-auto h-full rounded-lg">
           <Library songs={songs} />
         </Box>
       </div>

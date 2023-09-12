@@ -12,7 +12,7 @@ export default async function Home() {
   return (
 
     <div className="
-      bg-neutral-900
+      bg-neutral-950
       rounded-lg
       h-full
       w-full
@@ -21,7 +21,7 @@ export default async function Home() {
     ">
       <Header>
         <div className="mb-2">
-          <h1 className='
+          {/* <h1 className='
             text-white
             text-3xl
             font-semibold
@@ -42,7 +42,7 @@ export default async function Home() {
               name="Most Valuable"
               href="liked"
             />
-          </div>
+          </div> */}
         </div>
       </Header>
       <div className='mt-2 mb-7 px-6'>

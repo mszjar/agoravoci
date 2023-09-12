@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { BsPauseFill, BsPlayFill } from "react-icons/bs";
 import { HiSpeakerWave, HiSpeakerXMark } from "react-icons/hi2";
 import { AiFillStepBackward, AiFillStepForward } from "react-icons/ai";
+import { formatTime } from "@/libs/utils";
 
 import { Song } from "@/types";
 import usePlayer from "@/hooks/usePlayer";
@@ -12,7 +13,7 @@ import usePlayer from "@/hooks/usePlayer";
 import LikeButton from "./LikeButton";
 import MediaItem from "./MediaItem";
 import Slider from "./Slider";
-
+import ProgressSlider from "./ProgressSlider";
 
 interface PlayerContentProps {
   song: Song;
@@ -26,6 +27,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
   const player = usePlayer();
   const [volume, setVolume] = useState(1);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   const Icon = isPlaying ? BsPauseFill : BsPlayFill;
   const VolumeIcon = volume === 0 ? HiSpeakerXMark : HiSpeakerWave;
@@ -82,6 +84,17 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
     }
   }, [sound]);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const currentTime = sound?.seek() || 0;
+      const duration = sound?.duration() || 0;
+      const progress = (currentTime / duration) * 100;
+      setProgress(progress);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [sound]);
+
   const handlePlay = () => {
     if (!isPlaying) {
       play();
@@ -99,7 +112,16 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
   }
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 h-full">
+    <>
+      <ProgressSlider
+        value={sound?.seek() || 0}
+        onChange={(value) => {
+          setProgress(value);
+          sound?.seek(value);
+        }}
+        duration={sound?.duration() || 0}
+      />
+      <div className="grid grid-cols-2 md:grid-cols-3 h-full">
         <div className="flex w-full justify-start">
           <div className="flex items-center gap-x-4">
             <MediaItem data={song} />
@@ -147,6 +169,9 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
             gap-x-6
           "
         >
+          <div className="flex items-center gap-x-2">
+            <div className="w-10 text-right">{formatTime(sound?.seek() || 0)}</div>
+          </div>
           <AiFillStepBackward
             onClick={onPlayPrevious}
             size={30}
@@ -183,6 +208,9 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
               transition
             "
           />
+          <div className="flex items-center gap-x-2">
+            <div className="w-10 text-left">{formatTime(sound?.duration() || 0)}</div>
+          </div>
         </div>
 
         <div className="hidden md:flex w-full justify-end pr-2">
@@ -192,15 +220,16 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
               className="cursor-pointer"
               size={34}
             />
+
             <Slider
               value={volume}
               onChange={(value) => setVolume(value)}
             />
           </div>
         </div>
-
       </div>
-   );
+    </>
+  );
 }
 
 export default PlayerContent;
