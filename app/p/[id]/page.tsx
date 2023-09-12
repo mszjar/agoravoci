@@ -64,7 +64,7 @@ const song: React.FC<SongItemProps> = async ({ params }) => {
                 font-bold
               "
               >
-                {song[0].title}
+                {song.title}
               </h1>
             </div>
           </div>
