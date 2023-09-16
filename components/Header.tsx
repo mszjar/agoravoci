@@ -2,6 +2,9 @@
 
 import { useRouter } from "next/navigation";
 import { twMerge } from "tailwind-merge";
+import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
+import { HiHome } from "react-icons/hi";
+import { BiSearch } from "react-icons/bi";
 import Button from "./Button";
 import useAuthModal from "@/hooks/useAuthModal";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
@@ -9,20 +12,15 @@ import { useUser } from "@/hooks/useUser";
 import { FaUserAlt } from "react-icons/fa";
 import toast from "react-hot-toast";
 import usePlayer from "@/hooks/usePlayer";
-import { usePathname } from "next/navigation";
-import { useMemo } from "react";
-import { HiHome } from "react-icons/hi";
-import { BiSearch } from "react-icons/bi";
-import { AiFillHeart } from "react-icons/ai";
-import NavbarItem from "./NavbarItem";
-import Image from "next/image";
 
 
-interface NavbarProps {
+interface HeaderProps {
+  children: React.ReactNode;
   className?: string;
 }
 
-const Navbar: React.FC<NavbarProps> = ({
+const Header: React.FC<HeaderProps> = ({
+  children,
   className
 }) => {
   const player = usePlayer();
@@ -44,32 +42,6 @@ const Navbar: React.FC<NavbarProps> = ({
     }
   }
 
-  const pathname = usePathname();
-
-  const routes = useMemo(
-    () => [
-      {
-        icon: HiHome,
-        label: "Home",
-        active: pathname !== "/search" && pathname !== "/liked",
-        href: "/",
-      },
-      {
-        icon: BiSearch,
-        label: "Search",
-        active: pathname === "/search",
-        href: "/search",
-      },
-      {
-        icon: AiFillHeart,
-        label: "Liked",
-        active: pathname === "/liked",
-        href: "/liked",
-      },
-    ],
-    [pathname]
-  );
-
   return (
     <div
       className={twMerge(`
@@ -87,26 +59,66 @@ const Navbar: React.FC<NavbarProps> = ({
         justify-between
       ">
         <div className="
+          hidden
+          md:flex
+          gap-x-2
+          items-center
+        ">
+          {/* <button className="
+            rounded-full
+            bg-black
+            flex
+            items-center
+            justify-center
+            hover:opacity-75
+            transition
+          ">
+            <RxCaretLeft className="text-white" size={35}/>
+          </button>
+          <button className="
+            rounded-full
+            bg-black
+            flex
+            items-center
+            justify-center
+            hover:opacity-75
+            transition
+          ">
+            <RxCaretRight className="text-white" size={35}/>
+          </button> */}
+        </div>
+        <div className="flex md:hidden gap-x-2 items-center">
+          <button className="
+            rounded-full
+            p-2
+            bg-white
+            flex
+            items-center
+            justify-center
+            hover:opacity-75
+            transition
+          ">
+            <HiHome className="text-black" size={20}/>
+          </button>
+          <button className="
+            rounded-full
+            p-2
+            bg-white
+            flex
+            items-center
+            justify-center
+            hover:opacity-75
+            transition
+          ">
+            <BiSearch className="text-black" size={20}/>
+          </button>
+        </div>
+        <div className="
           flex
           justify-between
           items-center
           gap-x-4
         ">
-          <div className="flex items-center gap-2">
-            <Image
-              src="/images/liked.png"
-              alt="logo"
-              width="55"
-              height="55"
-            />
-            <p>Agoravoci</p>
-          </div>
-          {/* Navbar Items */}
-          <div className="flex gap-x-2 items-center">
-            {routes.map((item) => (
-              <NavbarItem key={item.label} {...item}/>
-            ))}
-          </div>
           { user ? (
             <div className="flex gap-x-4 items-center">
               <Button
@@ -150,8 +162,9 @@ const Navbar: React.FC<NavbarProps> = ({
           )}
         </div>
       </div>
+      {children}
     </div>
    );
 }
 
-export default Navbar;
+export default Header;

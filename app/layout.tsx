@@ -9,13 +9,12 @@ import ToasterProvider from '@/providers/ToasterProvider';
 import getSongsByUserId from '@/actions/getSongsByUserId';
 import Player from '@/components/Player';
 import getActiveProductsWithPrices from '@/actions/getActiveProductsWithPrices';
-import Navbar from '@/components/Navbar';
 
 const font = Figtree({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Agoravoci',
-  description: 'Blockchain subscriptions for creators',
+  description: 'Blockchain subscriptions for podcasters & writers',
 }
 
 export const revalidate = 0;
@@ -35,7 +34,6 @@ export default async function RootLayout({
         <SupabaseProvider>
           <UserProvider>
             <ModalProvider products={products}/>
-            <Navbar/>
             <Sidebar songs= {userSongs}>
               {children}
             </Sidebar>
