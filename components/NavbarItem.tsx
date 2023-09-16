@@ -2,14 +2,14 @@ import Link from 'next/link';
 import { IconType } from 'react-icons';
 import { twMerge } from 'tailwind-merge';
 
-interface SidebarItemProps {
+interface NavbarItemProps {
   icon: IconType;
   label: string;
   active?: boolean;
   href: string;
 }
 
-const SidebarItem: React.FC<SidebarItemProps> = ({
+const NavbarItem: React.FC<NavbarItemProps> = ({
   icon: Icon,
   label,
   active,
@@ -37,9 +37,9 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
       }
     >
       <Icon size={26} />
-      <p className="truncate w-100">{label}</p>
+      <p className="hidden truncate w-100">{label}</p>
     </Link>
    );
 }
 
-export default SidebarItem;
+export default NavbarItem;
