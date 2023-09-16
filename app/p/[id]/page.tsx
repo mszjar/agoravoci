@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import Image from "next/image";
 import getSong from "@/actions/getSong";
 import useLoadImage from "@/hooks/useLoadImage";
@@ -13,7 +14,7 @@ const song: React.FC<SongItemProps> = async ({ params }) => {
   const song = await getSong(params.id);
   // const imagePath = useLoadImage(song[0]);
   // console.log(song)
-
+  
   return (
     <div
       className="
@@ -25,7 +26,7 @@ const song: React.FC<SongItemProps> = async ({ params }) => {
       overflow-y-auto
     "
     >
-      <div>
+      <Header>
         <div className="mt-20">
           <div
             className="
@@ -73,7 +74,7 @@ const song: React.FC<SongItemProps> = async ({ params }) => {
             </div>
           </div>
         </div>
-      </div>
+      </Header>
     </div>
   );
 };
