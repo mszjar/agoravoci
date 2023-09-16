@@ -114,20 +114,19 @@ const Navbar: React.FC<NavbarProps> = ({
                     <NavbarItem key={item.label} {...item}/>
                   ))}
               </div>
-              <Button
+              <div
                 onClick={() => router.push("/account")}
-                className="bg-gray-200"
               >
                 {/* User image */}
                 <Image
-                  src={user.avatar_url ?? "/images/liked.png"}
+                  src={user.user_metadata.avatar_url ?? "/images/liked.png"}
                   alt="user"
-                  width="25"
-                  height="25"
+                  width="45"
+                  height="45"
                   className="rounded-full"
                 >
                 </Image>
-              </Button>
+              </div>
             </div>
           ) : (
             <div className="flex gap-x-4 items-center">

@@ -9,14 +9,10 @@ import { UserDetails, Subscription } from '@/types';
 
 type UserContextType = {
   accessToken: string | null;
-  user: UserWithAvatar | null;
+  user: User | null;
   userDetails: UserDetails | null;
   isLoading: boolean;
   subscription: Subscription | null;
-};
-
-type UserWithAvatar = User & {
-  avatar_url: string | null;
 };
 
 export const UserContext = createContext<UserContextType | undefined>(
@@ -70,35 +66,9 @@ export const MyUserContextProvider = (props: Props) => {
     }
   }, [user, isLoadingUser]);
 
-  const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchProfile = async () => {
-      if (user) {
-        const { data, error } = await supabase
-          .from('profiles')
-          .select('avatar_url')
-          .eq('id', user.id)
-          .single();
-
-        if (error) {
-          console.error(error);
-        } else {
-          setAvatarUrl(data?.avatar_url ?? null);
-        }
-      }
-    };
-
-    fetchProfile();
-  }, [user]);
-
-  const userWithAvatar: UserWithAvatar | null = user
-    ? { ...user, avatar_url: avatarUrl }
-    : null;
-
   const value = {
     accessToken,
-    user: userWithAvatar,
+    user,
     userDetails,
     isLoading: isLoadingUser || isLoadingData,
     subscription
