@@ -148,7 +148,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
               items-center
               justify-center
               rounded-full
-              bg-white
+              bg-gray-100
               p-1
               cursor-pointer
             "

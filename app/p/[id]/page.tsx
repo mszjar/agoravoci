@@ -17,8 +17,9 @@ const song: React.FC<SongItemProps> = async ({ params }) => {
   return (
     <div
       className="
-      bg-neutral-900
-      rounded-lg
+      bg-gradient-to-b
+      from-gray-100
+      rounded-xl
       h-full
       w-full
       overflow-hidden
@@ -45,7 +46,7 @@ const song: React.FC<SongItemProps> = async ({ params }) => {
               lg:w-44
             "
             >
-              <Image fill alt="Playlist" src={"/images/liked.png"}/>
+              <Image fill alt="Playlist" src={"/images/logo.svg"} className="rounded-xl"/>
             </div>
             <div
               className="

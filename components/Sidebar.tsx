@@ -33,14 +33,13 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
           xl:flex
           flex-col
           gap-y-2
-          bg-black
           h-full
           w-[300px]
           py-2
           pr-2
         "
       >
-        <Box className="overflow-y-auto h-full rounded-lg">
+        <Box className="overflow-y-auto h-full rounded-xl">
           <Library songs={songs} />
         </Box>
       </div>

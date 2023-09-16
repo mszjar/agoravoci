@@ -4,8 +4,9 @@ import Navbar from "@/components/Navbar";
 const Account = () => {
   return (
     <div className="
-      bg-neutral-900
-      rounded-lg
+      bg-gradient-to-b
+    from-gray-100
+      rounded-xl
       h-full
       w-full
       overflow-hidden

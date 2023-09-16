@@ -28,7 +28,7 @@ const ProgressSlider: React.FC<ProgressSliderProps> = ({
         w-full
         h-2
         cursor-pointer
-        bg-gray-950
+        bg-white
         rounded-full
       "
       defaultValue={[0]}

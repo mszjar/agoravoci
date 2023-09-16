@@ -18,7 +18,7 @@ const NewItem: React.FC<NewItemProps> = ({
         items-center
         gap-x-3
         cursor-pointer
-        hover:bg-neutral-800/50
+        hover:bg-gray-100
         w-full
         p-2
         rounded-md
@@ -44,7 +44,7 @@ const NewItem: React.FC<NewItemProps> = ({
         gap-y-1
         overflow-hidden
       ">
-        <p className="text-white truncate">
+        <p className="text-black truncate">
           New Title
         </p>
         <p className="text-neutral-400 text-sm truncate">
