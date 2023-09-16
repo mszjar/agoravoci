@@ -2,14 +2,14 @@ import Link from 'next/link';
 import { IconType } from 'react-icons';
 import { twMerge } from 'tailwind-merge';
 
-interface SidebarItemProps {
+interface NavbarItemProps {
   icon: IconType;
   label: string;
   active?: boolean;
   href: string;
 }
 
-const SidebarItem: React.FC<SidebarItemProps> = ({
+const NavbarItem: React.FC<NavbarItemProps> = ({
   icon: Icon,
   label,
   active,
@@ -42,4 +42,4 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
    );
 }
 
-export default SidebarItem;
+export default NavbarItem;
