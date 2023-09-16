@@ -32,7 +32,7 @@ const MediaItem: React.FC<MediaItemProps> = ({
         items-center
         gap-x-3
         cursor-pointer
-        hover:bg-neutral-800/50
+        hover:bg-white/50
         w-full
         p-2
         rounded-md
@@ -58,7 +58,7 @@ const MediaItem: React.FC<MediaItemProps> = ({
         gap-y-1
         overflow-hidden
       ">
-        <p className="text-white truncate">
+        <p className="text-black truncate">
           {data.title}
         </p>
         <p className="text-neutral-400 text-sm truncate">

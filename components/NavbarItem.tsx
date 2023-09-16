@@ -28,11 +28,11 @@ const NavbarItem: React.FC<NavbarItemProps> = ({
         text-md
         font-medium
         cursor-pointer
-        hover:text-white
+        hover:text-gray-500
         transition
-        text-neutral-400
+        text-neutral-100
         py-1`,
-        active && "text-white"
+        active && "text-gray-500"
         )
       }
     >
