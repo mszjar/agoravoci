@@ -37,7 +37,7 @@ const NavbarItem: React.FC<NavbarItemProps> = ({
       }
     >
       <Icon size={26} />
-      <p className="truncate w-100">{label}</p>
+      <p className="hidden truncate w-100">{label}</p>
     </Link>
    );
 }

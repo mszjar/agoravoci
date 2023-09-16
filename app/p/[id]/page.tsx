@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import Image from "next/image";
 import getSong from "@/actions/getSong";
 import useLoadImage from "@/hooks/useLoadImage";

@@ -15,13 +15,14 @@ import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 import { AiFillHeart } from "react-icons/ai";
 import NavbarItem from "./NavbarItem";
+import Image from "next/image";
 
 
-interface HeaderProps {
+interface NavbarProps {
   className?: string;
 }
 
-const Header: React.FC<HeaderProps> = ({
+const Navbar: React.FC<NavbarProps> = ({
   className
 }) => {
   const player = usePlayer();
@@ -50,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({
       {
         icon: HiHome,
         label: "Home",
-        active: pathname !== "/search",
+        active: pathname !== "/search" && pathname !== "/liked",
         href: "/",
       },
       {
@@ -91,15 +92,21 @@ const Header: React.FC<HeaderProps> = ({
           items-center
           gap-x-4
         ">
-          {/* Navbar Items */}
-          <div className="flex gap-x-4 items-center">
-            <div className="flex gap-x-2 items-center">
-              {routes.map((item) => (
-                <NavbarItem key={item.label} {...item} />
-              ))}
-            </div>
+          <div className="flex items-center gap-2">
+            <Image
+              src="/images/liked.png"
+              alt="logo"
+              width="55"
+              height="55"
+            />
+            <p>Agoravoci</p>
           </div>
-
+          {/* Navbar Items */}
+          <div className="flex gap-x-2 items-center">
+            {routes.map((item) => (
+              <NavbarItem key={item.label} {...item}/>
+            ))}
+          </div>
           { user ? (
             <div className="flex gap-x-4 items-center">
               <Button
@@ -147,4 +154,4 @@ const Header: React.FC<HeaderProps> = ({
    );
 }
 
-export default Header;
+export default Navbar;
