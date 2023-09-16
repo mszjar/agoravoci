@@ -2,7 +2,8 @@
 const nextConfig = {
   images: {
     domains: [
-      'xqxdmxlfegnleenusvxm.supabase.co'
+      'xqxdmxlfegnleenusvxm.supabase.co',
+      'avatars.githubusercontent.com',
     ]
   }
 }
