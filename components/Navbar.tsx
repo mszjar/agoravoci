@@ -94,7 +94,7 @@ const Navbar: React.FC<NavbarProps> = ({
         ">
           <div className="flex items-center gap-2">
             <Image
-              src="/images/liked.png"
+              src="/images/logo.svg"
               alt="logo"
               width="55"
               height="55"
