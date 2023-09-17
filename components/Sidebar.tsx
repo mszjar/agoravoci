@@ -4,6 +4,7 @@ import Box from "./Box";
 import Library from "./Library";
 import { Song } from "@/types";
 import usePlayer from "@/hooks/usePlayer";
+import { useUser } from "@/hooks/useUser";
 import { twMerge } from "tailwind-merge";
 
 interface SidebarProps {
@@ -13,6 +14,7 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
   const player = usePlayer();
+  const { user } = useUser()
 
   return (
     <div
@@ -27,22 +29,26 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
       {/* Main Content */}
       <main className="h-full flex-1 p-2">{children}</main>
       {/* Right Sidebar */}
-      <div
-        className="
-          hidden
-          xl:flex
-          flex-col
-          gap-y-2
-          h-full
-          w-[300px]
-          py-2
-          pr-2
-        "
-      >
-        <Box className="h-full rounded-xl">
-          <Library songs={songs} />
-        </Box>
-      </div>
+      { user ? (
+        <div
+          className="
+            hidden
+            xl:flex
+            flex-col
+            gap-y-2
+            h-full
+            w-[300px]
+            py-2
+            pr-2
+          "
+        >
+          <Box className="h-full rounded-xl">
+            <Library songs={songs} />
+          </Box>
+        </div>
+      ) : (
+        null
+      )}
     </div>
   );
 };
