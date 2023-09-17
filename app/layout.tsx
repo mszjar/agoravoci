@@ -6,10 +6,11 @@ import SupabaseProvider from '@/providers/SupabaseProvider';
 import UserProvider from '@/providers/UserProvider';
 import ModalProvider from '@/providers/ModalProvider';
 import ToasterProvider from '@/providers/ToasterProvider';
-import getSongsByUserId from '@/actions/getSongsByUserId';
+// import getSongsByUserId from '@/actions/getSongsByUserId';
 import Player from '@/components/Player';
 import getActiveProductsWithPrices from '@/actions/getActiveProductsWithPrices';
 import Navbar from '@/components/Navbar';
+import getLikedSongs from '@/actions/getLikedSongs';
 
 const font = Figtree({ subsets: ['latin'] })
 
@@ -25,7 +26,8 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const userSongs = await getSongsByUserId();
+  // const userSongs = await getSongsByUserId();
+  const likedSongs = await getLikedSongs();
   const products = await getActiveProductsWithPrices();
 
   return (
@@ -36,7 +38,7 @@ export default async function RootLayout({
           <UserProvider>
             <ModalProvider products={products}/>
             <Navbar/>
-            <Sidebar songs= {userSongs}>
+            <Sidebar songs= {likedSongs}>
               {children}
             </Sidebar>
             <Player/>
