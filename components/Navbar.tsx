@@ -115,17 +115,6 @@ const Navbar: React.FC<NavbarProps> = ({
                 <Button
                   onClick={authModal.onOpen}
                   className="
-                  bg-transparent
-                  text-gray-200
-                  font-small
-                ">
-                  Sign up
-                </Button>
-              </div>
-              <div>
-                <Button
-                  onClick={authModal.onOpen}
-                  className="
                   bg-gray-200
                   px-2
                   py-2

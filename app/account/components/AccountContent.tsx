@@ -48,7 +48,6 @@ const AccountContent = () => {
             >
               Subscribe
             </Button>
-
         </div>
       )}
       {subscription && (

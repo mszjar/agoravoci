@@ -4,6 +4,8 @@ import { Song } from "@/types";
 import SongItem from "@/components/SongItem";
 import useOnPlay from "@/hooks/useOnPlay";
 import { useUser } from "@/hooks/useUser";
+import Button from "@/components/Button";
+import useAuthModal from "@/hooks/useAuthModal";
 
 
 interface PageContentProps {
@@ -15,6 +17,7 @@ const PageContent: React.FC<PageContentProps> = ({
 }) => {
   const onPlay = useOnPlay(songs);
   const { user } = useUser();
+  const authModal = useAuthModal();
 
   if (songs.length === 0) {
     return (
@@ -47,7 +50,23 @@ const PageContent: React.FC<PageContentProps> = ({
         </div>
       ) : (
         <div className="gap-x-4 items-center">
-          <p>Not connected</p>
+          <div className="text-center w-full">
+            <h1 className="mt-24 sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+              Start creating and monetize on web 3 without wallet.
+            </h1>
+
+            <Button
+              onClick={authModal.onOpen}
+              className="mt-24 w-full"
+            >
+              Sign up
+            </Button>
+          </div>
+          <div className="text-center w-full">
+            <h1 className="mt-36 sm:text-3xl text-2xl mb-4 font-medium text-gray-900">
+              How it works
+            </h1>
+          </div>
           <div className="
             grid
             grid-cols-2
@@ -56,7 +75,7 @@ const PageContent: React.FC<PageContentProps> = ({
             xl:grid-cols-5
             2xl:grid-cols-8
             gap-4
-            mt-4
+            mt-32
             mb-32
           ">
             {songs.slice(0, 2).map((item) => (
