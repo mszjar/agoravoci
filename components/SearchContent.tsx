@@ -28,7 +28,7 @@ const SearchContent: React.FC<SearchContentProps> = ({
     )
   }
   return (
-    <div className="flex flex-col gap-y-2 w-full px-6">
+    <div className="flex flex-col gap-y-2 w-full px-6 mb-24">
       {songs.map((song) => (
         <div
           key={song.id}

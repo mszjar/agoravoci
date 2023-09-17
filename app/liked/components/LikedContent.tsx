@@ -41,7 +41,7 @@ const LikedContent: React.FC<LikedContentProps> = ({
   }
 
   return (
-    <div className="flex flex-col gap-y-2 w-full p-6">
+    <div className="flex flex-col gap-y-2 w-full p-6 mb-24">
       {songs.map((song) => (
         <div
           key={song.id}

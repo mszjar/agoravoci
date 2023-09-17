@@ -9,7 +9,7 @@ const Liked = async () => {
 
   return (
     <div className="
-    bg-gradient-to-b
+      bg-gradient-to-b
     from-gray-100
       rounded-xl
       h-full
