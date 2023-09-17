@@ -35,7 +35,7 @@ const LikedContent: React.FC<LikedContentProps> = ({
         px-6
         text-neutral-400
       ">
-        You are not following any creators yet.
+        Your liked posts.
       </div>
     )
   }
