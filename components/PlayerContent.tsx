@@ -124,7 +124,9 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
       <div className="grid grid-cols-2 md:grid-cols-3 h-full">
         <div className="flex w-screen justify-start">
           <div className="flex items-center gap-x-4">
-            <MediaItem data={song} />
+            <div className="sm:max-w-[80px] md:max-w-[200px] lg:max-w-[600px] truncate">
+              <MediaItem data={song} />
+            </div>
             <LikeButton songId={song.id} />
           </div>
         </div>
