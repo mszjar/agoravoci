@@ -1,5 +1,6 @@
 import AccountContent from "./components/AccountContent";
-import Navbar from "@/components/Navbar";
+import EndSession from "./components/EndSession";
+import UploadContent from "./components/UploadContent";
 
 const Account = () => {
   return (
@@ -12,7 +13,9 @@ const Account = () => {
       overflow-hidden
       overflow-y-auto
     ">
+      <UploadContent/>
       <AccountContent/>
+      <EndSession/>
     </div>
    );
 }

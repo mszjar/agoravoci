@@ -4,22 +4,15 @@ import { useRouter } from "next/navigation";
 import { twMerge } from "tailwind-merge";
 import Button from "./Button";
 import useAuthModal from "@/hooks/useAuthModal";
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useUser } from "@/hooks/useUser";
-// import { FaUserAlt } from "react-icons/fa";
-import toast from "react-hot-toast";
-import usePlayer from "@/hooks/usePlayer";
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
-// import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 import { AiFillHeart } from "react-icons/ai";
 import { AiOutlinePlus } from "react-icons/ai";
 import NavbarItem from "./NavbarItem";
 import Image from "next/image";
 import Link from "next/link";
-import useUploadModal from "@/hooks/useUploadModal";
-import useSubscribeModal from "@/hooks/useSubscribeModal";
 
 
 interface NavbarProps {
@@ -29,24 +22,10 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({
   className
 }) => {
-  const player = usePlayer();
   const authModal = useAuthModal();
   const router = useRouter();
 
-  const supabaseClient = useSupabaseClient();
-  const { user, subscription } = useUser();
-
-  const handleLogout = async () => {
-    const { error } = await supabaseClient.auth.signOut();
-    player.reset();
-    router.refresh();
-
-    if (error) {
-      toast.error(error.message);
-    } else {
-      toast.success("Logged out!");
-    }
-  }
+  const { user } = useUser();
 
   const pathname = usePathname();
 
@@ -67,21 +46,6 @@ const Navbar: React.FC<NavbarProps> = ({
     ],
     [pathname]
   );
-
-  const subscribeModal = useSubscribeModal();
-  const uploadModal = useUploadModal();
-
-  const onClick = () => {
-    if (!user) {
-      return authModal.onOpen();
-    }
-
-    if (!subscription) {
-      return subscribeModal.onOpen();
-    }
-
-    return uploadModal.onOpen();
-  };
 
   return (
     <div
@@ -130,24 +94,6 @@ const Navbar: React.FC<NavbarProps> = ({
                   {routes.map((item) => (
                     <NavbarItem key={item.label} {...item}/>
                   ))}
-                  <AiOutlinePlus
-                    onClick={onClick}
-                    size={26}
-                    className="flex
-                    flex-row
-                    h-auto
-                    items-center
-                    w-full
-                    gap-x-4
-                    text-md
-                    font-medium
-                    cursor-pointer
-                    hover:text-gray-500
-                    transition
-                    text-neutral-100
-                    py-1`
-                    "
-                  />
               </div>
               <div
                 onClick={() => router.push("/account")}
