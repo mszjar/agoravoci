@@ -46,7 +46,7 @@ const song: React.FC<SongItemProps> = async ({ params }) => {
               lg:w-44
             "
             >
-              <Image fill alt="Playlist" src={"/images/logo.svg"} className="rounded-xl"/>
+              <Image fill alt="image" src={"/images/liked.png"} className="rounded-xl"/>
             </div>
             <div
               className="
