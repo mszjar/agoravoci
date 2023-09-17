@@ -36,7 +36,7 @@ const AuthModal = () => {
       onChange={onChange}
     >
       <Auth
-        theme="dark"
+        theme="light"
         providers={['github']}
         supabaseClient={supabaseClient}
         appearance={{

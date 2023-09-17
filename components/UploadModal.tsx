@@ -66,7 +66,7 @@ const UploadModal = () => {
         });
         if (songError) {
           setIsLoading(false);
-          return toast.error("Failed to upload song.");
+          return toast.error("Failed to upload audio.");
         }
 
       //Upload image
@@ -103,7 +103,7 @@ const UploadModal = () => {
 
         router.refresh();
         setIsLoading(false);
-        toast.success("Song created successfully.");
+        toast.success("Podcast created successfully.");
         uploadModal.onClose();
 
     } catch (error) {
@@ -115,7 +115,7 @@ const UploadModal = () => {
 
   return (
     <Modal
-      title="Add a song"
+      title="Add a podcast"
       description="Upload an mp3 file."
       isOpen={uploadModal.isOpen}
       onChange={onChange}
@@ -128,17 +128,17 @@ const UploadModal = () => {
           id="title"
           disabled={isLoading}
           {...register("title", { required: true })}
-          placeholder="Song title"
+          placeholder="Title"
         />
         <Input
           id="author"
           disabled={isLoading}
           {...register("author", { required: true })}
-          placeholder="Song author"
+          placeholder="Description"
         />
         <div>
           <div className="pb-1">
-            Select a song file
+            Select an audio file
           </div>
           <Input
           id="song"

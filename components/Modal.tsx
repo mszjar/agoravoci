@@ -33,7 +33,7 @@ const Modal: React.FC<ModalProps> = ({
           fixed
           drop-shadow-md
           border
-          border-neutral-700
+          border-gray-100
           top-[50%]
           left-[50%]
           max-h-full
@@ -71,7 +71,7 @@ const Modal: React.FC<ModalProps> = ({
           </div>
           <Dialog.Close asChild>
             <button className='
-              text-neutral-400
+              text-neutral-100
               hover:text-white
               absolute
               top-[10px]
