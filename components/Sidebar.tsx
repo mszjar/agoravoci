@@ -19,13 +19,13 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
       className={twMerge(
         `
       flex
-      h-full
+      h-[calc(100%-70px)]
     `,
-        player.activeId && "h-[calc(100%-80px)]" && "py-1"
+        player.activeId && "h-[calc(100%-70px)]" && "py-1"
       )}
     >
       {/* Main Content */}
-      <main className="h-full flex-1 overflow-y-auto p-2">{children}</main>
+      <main className="h-full flex-1 p-2">{children}</main>
       {/* Right Sidebar */}
       <div
         className="
@@ -39,7 +39,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
           pr-2
         "
       >
-        <Box className="overflow-y-auto h-full rounded-xl">
+        <Box className="h-full rounded-xl">
           <Library songs={songs} />
         </Box>
       </div>

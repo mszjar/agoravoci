@@ -68,8 +68,7 @@ const Navbar: React.FC<NavbarProps> = ({
   return (
     <div
       className={twMerge(`
-        h-fit
-        bg-gradient-to-b
+        h-[70px]
         pt-4
         px-6
       `, className)}
