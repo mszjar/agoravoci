@@ -66,9 +66,9 @@ const PageContent: React.FC<PageContentProps> = ({
           </div>
 
           <LandingContent/>
-          
+
           <div className="text-center w-full">
-            <h1 className="mt-36 sm:text-3xl mb-4 text-2xl font-medium text-gray-900">
+            <h1 className="mt-4 sm:text-3xl mb-5 text-2xl font-medium text-gray-900">
               Explore the new world of creators
             </h1>
           </div>
@@ -80,7 +80,9 @@ const PageContent: React.FC<PageContentProps> = ({
             xl:grid-cols-5
             2xl:grid-cols-8
             gap-4
+            mt-4
             mb-32
+            sm:px-32
           ">
             {songs.slice(0, 8).map((item) => (
               <SongItem
