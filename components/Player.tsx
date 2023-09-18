@@ -18,6 +18,8 @@ const Player = () => {
   return (
     <div className="
       fixed
+      container
+      rounded-xl
       bottom-0
       bg-gray-200
       w-full

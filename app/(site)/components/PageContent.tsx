@@ -6,6 +6,7 @@ import useOnPlay from "@/hooks/useOnPlay";
 import { useUser } from "@/hooks/useUser";
 import Button from "@/components/Button";
 import useAuthModal from "@/hooks/useAuthModal";
+import Footer from "@/components/Footer";
 
 
 interface PageContentProps {
@@ -51,7 +52,7 @@ const PageContent: React.FC<PageContentProps> = ({
       ) : (
         <div className="gap-x-4 items-center">
           <div className="text-center w-full">
-            <h1 className="mt-24 sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+            <h1 className="mt-24 sm:text-3xl text-3xl mb-4 font-medium text-gray-900">
               Start creating and monetize on web 3 without a wallet.
             </h1>
 
@@ -91,6 +92,7 @@ const PageContent: React.FC<PageContentProps> = ({
               />
             ))}
           </div>
+          <Footer/>
         </div>
       )}
     </>
