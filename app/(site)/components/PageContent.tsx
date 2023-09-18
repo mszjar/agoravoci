@@ -53,7 +53,7 @@ const PageContent: React.FC<PageContentProps> = ({
         <div className="gap-x-4 items-center">
           <div className="text-center w-full">
             <h1 className="mt-24 sm:text-3xl text-3xl mb-4 font-medium text-gray-900">
-              Start creating and monetize on web 3 without a wallet.
+              Monetize your content everywhere in a secure way
             </h1>
 
             <Button
@@ -65,13 +65,52 @@ const PageContent: React.FC<PageContentProps> = ({
           </div>
           <div className="text-center w-full">
             <h1 className="mt-36 sm:text-3xl text-2xl mb-4 font-medium text-gray-900">
-              How it works
+              Do what you do best
             </h1>
-            <p>Here you will find the information - we are working on it</p>
+            <p>
+              We help you to monetize in web3 without the need of learning about cryptocurrencies and blockchain.
+              Let us to do the risky stuff and start focusing on what you do best.
+            </p>
+          </div>
+          <div className="text-center w-full">
+            <h1 className="mt-36 sm:text-3xl text-2xl mb-4 font-medium text-gray-900">
+              Enhance your web3 audience
+            </h1>
+            <p>Securly share your content to web3 subscribers throught NFT memberships</p>
+          </div>
+          <div className="text-center w-full">
+            <h1 className="mt-36 sm:text-3xl text-2xl mb-4 font-medium text-gray-900">
+              Custody
+            </h1>
+            <p>We keep safe your web3 earnings so you do not need to care about passwords, losing your private keys, scams, etc.
+            </p>
+          </div>
+          <div className="text-center w-full">
+            <h1 className="mt-36 sm:text-3xl text-2xl mb-4 font-medium text-gray-900">
+              Convert
+            </h1>
+            <p>Optionally, we convert your web3 earnings to fiat money and send it to your bank account.
+            </p>
+          </div>
+          <div className="text-center w-full">
+            <h1 className="mt-36 sm:text-3xl text-2xl mb-4 font-medium text-gray-900">
+              Learn and do it yourself
+            </h1>
+            <p>We teach you about web3 and blockchain security so you can do it yourself.
+              You can save money and learn a new skill.
+            </p>
+          </div>
+          <div className="text-center w-full">
+            <h1 className="mt-36 sm:text-3xl text-2xl mb-4 font-medium text-gray-900">
+              Get good deals
+            </h1>
+            <p>Your membership tickets can be
+              designed and sponsored by your favorite brands.
+            </p>
           </div>
           <div className="text-center w-full">
             <h1 className="mt-36 sm:text-3xl mb-4 text-2xl font-medium text-gray-900">
-              Explore Podcasts
+              Explore the new world of creators
             </h1>
           </div>
           <div className="
