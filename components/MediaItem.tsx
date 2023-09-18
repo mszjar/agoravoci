@@ -58,10 +58,10 @@ const MediaItem: React.FC<MediaItemProps> = ({
         gap-y-1
         overflow-hidden
       ">
-        <div className="text-black sm:max-w-[80px] md:max-w-[200px] lg:max-w-full">
+        <div className="text-black sm:max-w-[80px] md:max-w-[200px] lg:max-w-[300px]">
           {data.title}
         </div>
-        <div className="text-neutral-400 text-sm sm:max-w-[150px] md:max-w-[200px] lg:max-w-full">
+        <div className="text-neutral-400 text-sm sm:max-w-[150px] md:max-w-[200px] lg:max-w-[300px]">
           {data.author}
         </div>
       </div>
