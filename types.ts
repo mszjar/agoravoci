@@ -1,4 +1,4 @@
-import Stripe from 'stripe';
+import Stripe from "stripe";
 
 export interface UserDetails {
   id: string;
@@ -19,6 +19,10 @@ export interface Song {
   image_path: string;
 }
 
+export interface User {
+  full_name: string;
+  avatar_url?: string;
+}
 
 export interface Product {
   id: string;

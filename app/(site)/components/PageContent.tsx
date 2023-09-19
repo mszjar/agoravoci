@@ -1,6 +1,7 @@
 "use client";
 
 import { Song } from "@/types";
+import { User } from "@/types";
 import SongItem from "@/components/SongItem";
 import useOnPlay from "@/hooks/useOnPlay";
 import { useUser } from "@/hooks/useUser";
@@ -9,29 +10,24 @@ import useAuthModal from "@/hooks/useAuthModal";
 import Footer from "@/components/Footer";
 import LandingContent from "./LandingContent";
 
-
 interface PageContentProps {
   songs: Song[];
+  users: User[];
 }
 
-const PageContent: React.FC<PageContentProps> = ({
-  songs
-}) => {
+const PageContent: React.FC<PageContentProps> = ({ songs, users }) => {
   const onPlay = useOnPlay(songs);
   const { user } = useUser();
   const authModal = useAuthModal();
 
-  if (songs.length === 0) {
-    return (
-      <div className="mt-4 text-neutral-400">
-        No posts available.
-      </div>
-    )
+  if (songs.length === 0 || users.length === 0) {
+    return <div className="mt-4 text-neutral-400">No posts available.</div>;
   }
   return (
     <>
-    	{ user ? (
-        <div className="
+      {user ? (
+        <div
+          className="
           grid
           grid-cols-2
           sm:grid-cols-3
@@ -41,7 +37,8 @@ const PageContent: React.FC<PageContentProps> = ({
           gap-4
           mt-4
           mb-32
-        ">
+        "
+        >
           {songs.map((item) => (
             <SongItem
               key={item.id}
@@ -49,6 +46,7 @@ const PageContent: React.FC<PageContentProps> = ({
               data={item}
             />
           ))}
+          {/* {users.map(()=>( <UserItem />))} */}
         </div>
       ) : (
         <div className="gap-x-4 items-center">
@@ -57,22 +55,20 @@ const PageContent: React.FC<PageContentProps> = ({
               Monetize your content everywhere in a secure way
             </h1>
 
-            <Button
-              onClick={authModal.onOpen}
-              className="mt-24 lg:w-[500px]"
-            >
+            <Button onClick={authModal.onOpen} className="mt-24 lg:w-[500px]">
               Sign up
             </Button>
           </div>
 
-          <LandingContent/>
+          <LandingContent />
 
           <div className="text-center w-full">
             <h1 className="mt-4 sm:text-3xl mb-5 text-2xl font-medium text-gray-900">
               Explore the new world of creators
             </h1>
           </div>
-          <div className="
+          <div
+            className="
             grid
             grid-cols-2
             sm:grid-cols-3
@@ -83,7 +79,8 @@ const PageContent: React.FC<PageContentProps> = ({
             mt-4
             mb-32
             sm:px-32
-          ">
+          "
+          >
             {songs.slice(0, 8).map((item) => (
               <SongItem
                 key={item.id}
@@ -92,11 +89,11 @@ const PageContent: React.FC<PageContentProps> = ({
               />
             ))}
           </div>
-          <Footer/>
+          <Footer />
         </div>
       )}
     </>
-   );
-}
+  );
+};
 
 export default PageContent;

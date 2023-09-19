@@ -60,6 +60,11 @@ const SongItem: React.FC<SongItemProps> = ({ data, onClick }) => {
             {data.author}
           </p>
         </Link>
+        <Link href={`/${data.user_id}`}>
+          <p className="text-neutral-400 text-sm pb-4 w-full truncate">
+            {data.user_id}
+          </p>
+        </Link>
       </div>
 
       <div
