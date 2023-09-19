@@ -36,12 +36,14 @@ export default async function RootLayout({
         <ToasterProvider/>
         <SupabaseProvider>
           <UserProvider>
-            <ModalProvider products={products}/>
-            <Navbar/>
-            <Sidebar songs= {likedSongs}>
-              {children}
-            </Sidebar>
-            <Player/>
+            <div className='container mx-auto'>
+              <ModalProvider products={products}/>
+              <Navbar/>
+              <Sidebar songs= {likedSongs}>
+                {children}
+              </Sidebar>
+              <Player/>
+            </div>
           </UserProvider>
         </SupabaseProvider>
         </body>

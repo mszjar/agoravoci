@@ -7,6 +7,8 @@ import useOnPlay from "@/hooks/useOnPlay";
 import { useUser } from "@/hooks/useUser";
 import Button from "@/components/Button";
 import useAuthModal from "@/hooks/useAuthModal";
+import Footer from "@/components/Footer";
+import LandingContent from "./LandingContent";
 
 interface PageContentProps {
   songs: Song[];
@@ -49,23 +51,20 @@ const PageContent: React.FC<PageContentProps> = ({ songs, users }) => {
       ) : (
         <div className="gap-x-4 items-center">
           <div className="text-center w-full">
-            <h1 className="mt-24 sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-              Start creating and monetize on web 3 without a wallet.
+            <h1 className="mt-24 sm:text-3xl text-3xl mb-4 font-medium text-gray-900">
+              Monetize your content everywhere in a secure way
             </h1>
 
             <Button onClick={authModal.onOpen} className="mt-24 lg:w-[500px]">
               Sign up
             </Button>
           </div>
+
+          <LandingContent />
+
           <div className="text-center w-full">
-            <h1 className="mt-36 sm:text-3xl text-2xl mb-4 font-medium text-gray-900">
-              How it works
-            </h1>
-            <p>Here you will find the information - we are working on it</p>
-          </div>
-          <div className="text-center w-full">
-            <h1 className="mt-36 sm:text-3xl mb-4 text-2xl font-medium text-gray-900">
-              Explore Podcasts
+            <h1 className="mt-4 sm:text-3xl mb-5 text-2xl font-medium text-gray-900">
+              Explore the new world of creators
             </h1>
           </div>
           <div
@@ -77,7 +76,9 @@ const PageContent: React.FC<PageContentProps> = ({ songs, users }) => {
             xl:grid-cols-5
             2xl:grid-cols-8
             gap-4
+            mt-4
             mb-32
+            sm:px-32
           "
           >
             {songs.slice(0, 8).map((item) => (
@@ -88,6 +89,7 @@ const PageContent: React.FC<PageContentProps> = ({ songs, users }) => {
               />
             ))}
           </div>
+          <Footer />
         </div>
       )}
     </>

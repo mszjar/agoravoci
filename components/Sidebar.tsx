@@ -42,7 +42,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
             pr-2
           "
         >
-          <Box className="h-full rounded-xl">
+          <Box className="h-full rounded-xl ">
             <Library songs={songs} />
           </Box>
         </div>

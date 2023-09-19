@@ -9,7 +9,6 @@ import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 import { BiSearch } from "react-icons/bi";
 import { AiFillHeart } from "react-icons/ai";
-import { AiOutlinePlus } from "react-icons/ai";
 import NavbarItem from "./NavbarItem";
 import Image from "next/image";
 import Link from "next/link";
@@ -72,13 +71,13 @@ const Navbar: React.FC<NavbarProps> = ({
               <Image
                 src="/images/logo.svg"
                 alt="logo"
-                width="45"
-                height="45"
+                width="35"
+                height="35"
               />
               </Link>
               <div className='flex justify-between items-center'>
                 <Link href='/'>
-                  <h1 className='text-black text-2xl font-semibold'>
+                  <h1 className='text-black text-xl font-semibold'>
                     Agoravoci
                   </h1>
                 </Link>
@@ -104,7 +103,7 @@ const Navbar: React.FC<NavbarProps> = ({
                   alt="user"
                   width="45"
                   height="45"
-                  className="rounded-full"
+                  className="rounded-full cursor-pointer"
                 >
                 </Image>
               </div>
