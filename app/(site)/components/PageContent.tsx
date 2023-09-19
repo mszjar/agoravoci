@@ -1,35 +1,31 @@
 "use client";
 
 import { Song } from "@/types";
+import { User } from "@/types";
 import SongItem from "@/components/SongItem";
 import useOnPlay from "@/hooks/useOnPlay";
 import { useUser } from "@/hooks/useUser";
 import Button from "@/components/Button";
 import useAuthModal from "@/hooks/useAuthModal";
 
-
 interface PageContentProps {
   songs: Song[];
+  users: User[];
 }
 
-const PageContent: React.FC<PageContentProps> = ({
-  songs
-}) => {
+const PageContent: React.FC<PageContentProps> = ({ songs, users }) => {
   const onPlay = useOnPlay(songs);
   const { user } = useUser();
   const authModal = useAuthModal();
 
-  if (songs.length === 0) {
-    return (
-      <div className="mt-4 text-neutral-400">
-        No posts available.
-      </div>
-    )
+  if (songs.length === 0 || users.length === 0) {
+    return <div className="mt-4 text-neutral-400">No posts available.</div>;
   }
   return (
     <>
-    	{ user ? (
-        <div className="
+      {user ? (
+        <div
+          className="
           grid
           grid-cols-2
           sm:grid-cols-3
@@ -39,7 +35,8 @@ const PageContent: React.FC<PageContentProps> = ({
           gap-4
           mt-4
           mb-32
-        ">
+        "
+        >
           {songs.map((item) => (
             <SongItem
               key={item.id}
@@ -47,6 +44,7 @@ const PageContent: React.FC<PageContentProps> = ({
               data={item}
             />
           ))}
+          {/* {users.map(()=>( <UserItem />))} */}
         </div>
       ) : (
         <div className="gap-x-4 items-center">
@@ -55,10 +53,7 @@ const PageContent: React.FC<PageContentProps> = ({
               Start creating and monetize on web 3 without a wallet.
             </h1>
 
-            <Button
-              onClick={authModal.onOpen}
-              className="mt-24 lg:w-[500px]"
-            >
+            <Button onClick={authModal.onOpen} className="mt-24 lg:w-[500px]">
               Sign up
             </Button>
           </div>
@@ -73,7 +68,8 @@ const PageContent: React.FC<PageContentProps> = ({
               Explore Podcasts
             </h1>
           </div>
-          <div className="
+          <div
+            className="
             grid
             grid-cols-2
             sm:grid-cols-3
@@ -82,7 +78,8 @@ const PageContent: React.FC<PageContentProps> = ({
             2xl:grid-cols-8
             gap-4
             mb-32
-          ">
+          "
+          >
             {songs.slice(0, 8).map((item) => (
               <SongItem
                 key={item.id}
@@ -94,7 +91,7 @@ const PageContent: React.FC<PageContentProps> = ({
         </div>
       )}
     </>
-   );
-}
+  );
+};
 
 export default PageContent;
