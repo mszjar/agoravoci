@@ -33,7 +33,7 @@ const LandingContent = () => {
                 Do what you do best
               </h2>
               <p className="leading-relaxed text-base">
-                We help you to monetize in web3 without the need of learning about cryptocurrencies and blockchain.
+                We help you to manage your content and monetize in web3 without the need of learning about cryptocurrencies and blockchain.
                 Let us to do the risky stuff and start focusing on what you do best.
               </p>
             </div>
