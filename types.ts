@@ -20,8 +20,11 @@ export interface Song {
 }
 
 export interface User {
+  id: string;
   full_name: string;
   avatar_url?: string;
+  billing_address?: Stripe.Address;
+  paymsnt_method?: Stripe.PaymentMethod[Stripe.PaymentMethod.Type];
 }
 
 export interface Product {

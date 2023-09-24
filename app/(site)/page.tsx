@@ -9,7 +9,6 @@ export default async function Home() {
   const songs = await getSongs();
 
   const users = await getUsers();
-  //console.log(users);
 
   return (
     <div
