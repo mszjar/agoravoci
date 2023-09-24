@@ -71,7 +71,7 @@ const PageContent: React.FC<PageContentProps> = ({ songs, users }) => {
         <div className="gap-x-4 items-center">
           <div className="text-center w-full">
             <h1 className="mt-24 sm:text-3xl text-3xl mb-4 font-medium text-gray-900">
-              Monetize your content everywhere in a secure way
+              Manage and monetize your content everywhere in a secure way
             </h1>
 
             <Button onClick={authModal.onOpen} className="mt-24 lg:w-[500px]">

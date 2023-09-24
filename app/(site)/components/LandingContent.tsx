@@ -9,7 +9,7 @@ const LandingContent = () => {
             Start today, its free
           </h1>
           <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">
-            Create your account and start monetizing your content in web3.
+            Sign up and start monetizing your content in web3.
           </p>
         </div>
         <div className="flex flex-wrap -m-4">
@@ -33,7 +33,7 @@ const LandingContent = () => {
                 Do what you do best
               </h2>
               <p className="leading-relaxed text-base">
-                We help you to monetize in web3 without the need of learning about cryptocurrencies and blockchain.
+                We help you to manage your content and monetize in web3 without the need of learning about cryptocurrencies and blockchain.
                 Let us to do the risky stuff and start focusing on what you do best.
               </p>
             </div>
