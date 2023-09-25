@@ -3,6 +3,7 @@
 import { Song } from "@/types";
 import { User } from "@/types";
 import SongItem from "@/components/SongItem";
+import UserItem from "@/components/UserItem";
 import useOnPlay from "@/hooks/useOnPlay";
 import { useUser } from "@/hooks/useUser";
 import Button from "@/components/Button";
@@ -20,14 +21,15 @@ const PageContent: React.FC<PageContentProps> = ({ songs, users }) => {
   const { user } = useUser();
   const authModal = useAuthModal();
 
-  if (songs.length === 0 || users.length === 0) {
+  if (songs.length === 0) {
     return <div className="mt-4 text-neutral-400">No posts available.</div>;
   }
   return (
     <>
       {user ? (
-        <div
-          className="
+        <div>
+          <div
+            className="
           grid
           grid-cols-2
           sm:grid-cols-3
@@ -38,15 +40,32 @@ const PageContent: React.FC<PageContentProps> = ({ songs, users }) => {
           mt-4
           mb-32
         "
-        >
-          {songs.map((item) => (
-            <SongItem
-              key={item.id}
-              onClick={(id: string) => onPlay(id)}
-              data={item}
-            />
-          ))}
-          {/* {users.map(()=>( <UserItem />))} */}
+          >
+            {songs.map((item) => (
+              <SongItem
+                key={item.id}
+                onClick={(id: string) => onPlay(id)}
+                data={item}
+              />
+            ))}
+          </div>
+          <div
+            className="
+        grid
+        grid-cols-2
+        sm:grid-cols-3
+        lg:grid-cols-4
+        xl:grid-cols-5
+        2xl:grid-cols-8
+        gap-4
+        mt-4
+        mb-32
+      "
+          >
+            {users.map((user) => (
+              <UserItem key={user.id} data={user} />
+            ))}
+          </div>
         </div>
       ) : (
         <div className="gap-x-4 items-center">
