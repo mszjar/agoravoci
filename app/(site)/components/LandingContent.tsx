@@ -14,7 +14,7 @@ const LandingContent = () => {
         </div>
         <div className="flex flex-wrap -m-4">
           <div className="xl:w-1/3 md:w-1/2 p-4">
-            <div className="border border-gray-200 p-6 rounded-lg">
+            <div className="border border-slate-200 p-6 rounded-lg">
               <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-500 mb-4">
                 <svg
                   fill="none"
@@ -39,7 +39,7 @@ const LandingContent = () => {
             </div>
           </div>
           <div className="xl:w-1/3 md:w-1/2 p-4">
-            <div className="border border-gray-200 p-6 rounded-lg">
+            <div className="border border-slate-200 p-6 rounded-lg">
               <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-500 mb-4">
                 <svg
                   fill="none"
@@ -62,7 +62,7 @@ const LandingContent = () => {
             </div>
           </div>
           <div className="xl:w-1/3 md:w-1/2 p-4">
-            <div className="border border-gray-200 p-6 rounded-lg">
+            <div className="border border-slate-200 p-6 rounded-lg">
               <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-500 mb-4">
 
                 <svg
@@ -86,7 +86,7 @@ const LandingContent = () => {
             </div>
           </div>
           <div className="xl:w-1/3 md:w-1/2 p-4">
-            <div className="border border-gray-200 p-6 rounded-lg">
+            <div className="border border-slate-200 p-6 rounded-lg">
               <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-500 mb-4">
               <svg
                   fill="none"
@@ -109,7 +109,7 @@ const LandingContent = () => {
             </div>
           </div>
           <div className="xl:w-1/3 md:w-1/2 p-4">
-            <div className="border border-gray-200 p-6 rounded-lg">
+            <div className="border border-slate-200 p-6 rounded-lg">
               <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-500 mb-4">
                 <svg
                   fill="none"
@@ -134,7 +134,7 @@ const LandingContent = () => {
             </div>
           </div>
           <div className="xl:w-1/3 md:w-1/2 p-4">
-            <div className="border border-gray-200 p-6 rounded-lg">
+            <div className="border border-slate-200 p-6 rounded-lg">
               <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-500 mb-4">
               <svg
                   fill="none"

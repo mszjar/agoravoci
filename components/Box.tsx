@@ -13,7 +13,7 @@ const Box: React.FC<BoxProps> = ({
     <div
       className={twMerge(`
         bg-gradient-to-b
-      from-gray-200
+      from-slate-200
         rounded-ld
         h-fit
         w-full

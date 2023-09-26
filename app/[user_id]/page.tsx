@@ -23,7 +23,7 @@ const User: React.FC<UserItemProps> = ({ params }) => {
     <div
       className="
       bg-gradient-to-b
-      from-gray-100
+      from-slate-100
       rounded-xl
       h-full
       w-full

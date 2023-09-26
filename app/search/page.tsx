@@ -16,14 +16,14 @@ const Search = async ({ searchParams }: SearchProps) => {
   return (
     <div className="
       bg-gradient-to-b
-    from-gray-100
+    from-slate-100
       rounded-xl
       h-full
       w-full
       overflow-hidden
       overflow-y-auto
     ">
-      <div className="p-4 from-bg-gray-100">
+      <div className="p-4 from-bg-slate-100">
         <div className="mb-2 flex flex-col gap-y-6">
           <SeatchInput/>
         </div>

@@ -18,7 +18,7 @@ const NewItem: React.FC<NewItemProps> = ({
         items-center
         gap-x-3
         cursor-pointer
-        hover:bg-gray-100
+        hover:bg-slate-100
         w-full
         p-2
         rounded-md

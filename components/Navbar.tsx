@@ -114,7 +114,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 <Button
                   onClick={authModal.onOpen}
                   className="
-                  bg-gray-200
+                  bg-slate-200
                   px-2
                   py-2
                 ">

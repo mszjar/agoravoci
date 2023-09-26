@@ -48,7 +48,7 @@ const EndSession = () => {
               <Button
                 disabled={loading || isLoading}
                 onClick={handleLogout}
-                className="bg-gray-200 w-full"
+                className="bg-slate-200 w-full"
               >
                 Logout
               </Button>

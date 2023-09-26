@@ -21,7 +21,7 @@ const Player = () => {
       container
       rounded-xl
       bottom-0
-      bg-gray-200
+      bg-slate-200
       w-full
       py-2
       h-[80px]
