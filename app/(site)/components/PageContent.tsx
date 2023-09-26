@@ -28,6 +28,11 @@ const PageContent: React.FC<PageContentProps> = ({ songs, users }) => {
     <>
       {user ? (
         <div>
+          <div className="inline-flex items-center gap-x-2 px-5 pt-4">
+            <p className="text-neutral-400 font-medium text-md">
+              Recent posts
+            </p>
+          </div>
           <div
             className="
           grid
@@ -38,9 +43,10 @@ const PageContent: React.FC<PageContentProps> = ({ songs, users }) => {
           2xl:grid-cols-8
           gap-4
           mt-4
-          mb-32
+          mb-8
         "
           >
+
             {songs.map((item) => (
               <SongItem
                 key={item.id}
@@ -48,6 +54,34 @@ const PageContent: React.FC<PageContentProps> = ({ songs, users }) => {
                 data={item}
               />
             ))}
+          </div>
+          <div className="inline-flex items-center gap-x-2 px-5 pt-4">
+            <p className="text-neutral-400 font-medium text-md">
+              Connected accounts
+            </p>
+          </div>
+          <div
+            className="
+        grid
+        grid-cols-2
+        sm:grid-cols-3
+        lg:grid-cols-4
+        xl:grid-cols-5
+        2xl:grid-cols-8
+        gap-4
+        mt-4
+        mb-8
+      "
+          >
+            {users.map((user) => (
+              <UserItem key={user.id} data={user} />
+            ))}
+          </div>
+          {/* AI agents */}
+          {/* <div className="inline-flex items-center gap-x-2 px-5 pt-4">
+            <p className="text-neutral-400 font-medium text-md">
+              My AI creative agents
+            </p>
           </div>
           <div
             className="
@@ -65,7 +99,7 @@ const PageContent: React.FC<PageContentProps> = ({ songs, users }) => {
             {users.map((user) => (
               <UserItem key={user.id} data={user} />
             ))}
-          </div>
+          </div> */}
         </div>
       ) : (
         <div className="gap-x-4 items-center">

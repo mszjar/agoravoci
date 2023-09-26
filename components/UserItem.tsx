@@ -4,7 +4,6 @@ import useLoadImage from "@/hooks/useLoadImage";
 import { User } from "@/types";
 import Link from "next/link";
 import Image from "next/image";
-import Playbutton from "@/components/PlayButton";
 
 interface SongItemProps {
   data: User;
@@ -42,7 +41,15 @@ const UserItem: React.FC<SongItemProps> = ({ data }) => {
         overflow-hidden
       "
       >
-        <Link href={`/${data.id}`}></Link>
+        <Link href={`/${data.id}`}>
+          <Image
+            src={data.avatar_url ?? "/images/liked.png"}
+            alt="user"
+            fill
+            className="object-cover"
+            >
+          </Image>
+        </Link>
       </div>
 
       <div className="flex flex-col items-start w-full pt-4 gap-y-1">

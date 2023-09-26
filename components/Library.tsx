@@ -1,6 +1,4 @@
 "use client";
-// import { TbPlaylist } from "react-icons/tb";
-// import { AiOutlinePlus } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
 
 import useAuthModal from "@/hooks/useAuthModal";
@@ -44,7 +42,7 @@ const Library: React.FC<LibraryProps> = ({
         <div className="inline-flex items-center gap-x-2">
           <AiFillHeart className="text-neutral-400" size={26}/>
           <p className="text-neutral-400 font-medium text-md">
-             Liked
+             Best performed posts
           </p>
         </div>
       </div>
