@@ -79,6 +79,7 @@ const PageContent: React.FC<PageContentProps> = ({ songs, users }) => {
             </Button>
           </div>
 
+          {/* Landing page content */}
           <LandingContent />
 
           <div className="text-center w-full">
