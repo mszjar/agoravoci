@@ -14,7 +14,7 @@ export default async function Home() {
     <div
       className="
       bg-gradient-to-b
-      from-slate-100
+      from-slate-100 to-white
       rounded-xl
       h-full
       w-full

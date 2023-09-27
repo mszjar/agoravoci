@@ -9,7 +9,7 @@ const LandingContent = () => {
             Get started for free
           </h1>
           <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">
-            Sign up and start monetizing your content in web3.
+            Connect your first account in less than 1 minute
           </p>
         </div>
         <div className="flex flex-wrap -m-4">

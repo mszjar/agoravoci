@@ -82,14 +82,18 @@ const PageContent: React.FC<PageContentProps> = ({ songs, users }) => {
       ) : (
         <div className="gap-x-4 items-center">
           <div className="text-center w-full">
-            <div className="flex">
-              <h1 className="sm:m-32 m-16 sm:text-7xl text-5xl font-bold text-gray-900 animated-gradient-blue">
+            <div className="sm:flex sm:m-32 m-16">
+              <h1 className="sm:text-7xl text-5xl font-bold animated-gradient-fast">
                 Connect. <br className="sm:hidden" />
+              </h1>
+              <h1 className="sm:text-7xl text-5xl font-bold animated-gradient-normal">
                 Manage. <br className="sm:hidden" />
+              </h1>
+              <h1 className="sm:text-7xl text-5xl font-bold animated-gradient-slow">
                 Earn. <br className="sm:hidden" />
               </h1>
             </div>
-            <p>Connect your online profiles & manage them with AI agents.</p>
+            <p className="text-gray-500">Connect your online profiles & manage them with AI agents.</p>
 
             <Button onClick={authModal.onOpen} className="mt-12 lg:w-[300px]">
               Get started

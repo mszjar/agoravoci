@@ -10,9 +10,33 @@ body,
   color-scheme: light;
 }
 
-@keyframes gradient-blue {
+@keyframes gradient {
   0% {
-    color: #f2f5f9;
+    color: #b1b1b1;
+  }
+  50% {
+    color: #b1b1b1;
+  }
+  100% {
+    color: #b1b1b1;
+  }
+}
+
+@keyframes gradient-gray {
+  0% {
+    color: #696969;
+  }
+  50% {
+    color: #696969;
+  }
+  100% {
+    color: #696969;
+  }
+}
+
+@keyframes gradient-black {
+  0% {
+    color: #000000;
   }
   50% {
     color: #000000;
@@ -22,6 +46,12 @@ body,
   }
 }
 
-.animated-gradient-blue {
-  animation: gradient-blue 20s ease-in-out;
+.animated-gradient-fast {
+  animation: gradient 15s ease-in-out infinite;
+}
+.animated-gradient-normal{
+  animation: gradient-gray 15s ease-in-out infinite;
+}
+.animated-gradient-slow {
+  animation: gradient-black 15s ease-in-out infinite;
 }

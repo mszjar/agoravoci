@@ -17,7 +17,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
       className={twMerge(`
         w-full
         rounded-full
-        bg-blue-400
+        bg-gradient-to-r from-blue-400 to-cyan-400
         border
         border-transparent
         px-3
