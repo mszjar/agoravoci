@@ -33,8 +33,10 @@ const LandingContent = () => {
                 Do what you do best
               </h2>
               <p className="leading-relaxed text-base">
-                We help you to manage your content and monetize in web3 without the need of learning about cryptocurrencies and blockchain.
-                Let us to do the risky stuff and start focusing on what you do best.
+              We allow creators to connect multiple online profiles and create your own AI agents.
+              They learn on detail about the creator s behavior and help them giving tips and trends.
+              The AI agents are exclusive property of the creator.
+
               </p>
             </div>
           </div>
@@ -54,10 +56,13 @@ const LandingContent = () => {
                 </svg>
               </div>
               <h2 className="text-lg text-gray-900 font-medium title-font mb-2">
-                Enhance your web3 audience
+                Enhance your audience
               </h2>
               <p className="leading-relaxed text-base">
-                Securly share your content to web3 subscribers throught NFT memberships.
+              On the other side, creators will be allowed to get web3 subscribers through the use of NFTs
+              (creator patronage model.).
+              This will be an attractive gateway for creators in order to monetize on web3 without the need
+              of creating a web3 wallet.
               </p>
             </div>
           </div>
@@ -128,7 +133,7 @@ const LandingContent = () => {
                 Learn and do it yourself
               </h2>
               <p className="leading-relaxed text-base">
-                We teach you about web3 and blockchain security so you can do it yourself.
+                We teach you about AI and blockchain security so you can control your data yourself.
                 You can save money and learn a new skill.
               </p>
             </div>
@@ -152,7 +157,7 @@ const LandingContent = () => {
                 Get good deals
               </h2>
               <p className="leading-relaxed text-base">
-                Your membership tickets can be
+                Your membership NFTs can be
                 designed and sponsored by your favorite brands.
               </p>
             </div>
