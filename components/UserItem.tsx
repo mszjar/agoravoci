@@ -56,6 +56,11 @@ const UserItem: React.FC<SongItemProps> = ({ data }) => {
         <Link href={`/${data.id}`}>
           <p className="font-semibold truncate w-full">{data.full_name}</p>
         </Link>
+        <Link href={`/${data.id}`}>
+          <p className="text-neutral-400 text-sm w-full truncate">Social Media</p>
+          <p className="text-neutral-400 text-sm w-full truncate">300k Followers</p>
+          <p className="text-neutral-400 text-sm w-full truncate">1M Likes</p>
+        </Link>
       </div>
     </div>
   );

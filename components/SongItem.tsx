@@ -56,13 +56,16 @@ const SongItem: React.FC<SongItemProps> = ({ data, onClick }) => {
       <div className="flex flex-col items-start w-full pt-4 gap-y-1">
         <Link href={`/p/${data.id}`}>
           <p className="font-semibold truncate w-full">{data.title}</p>
-          <p className="text-neutral-400 text-sm pb-4 w-full truncate">
+          <p className="text-neutral-400 text-sm w-full truncate">
             {data.author}
           </p>
         </Link>
         <Link href={`/${data.user_id}`}>
-          <p className="text-neutral-400 text-sm pb-4 w-full truncate">
-            {data.user_id}
+          <p className="text-neutral-400 text-sm w-full truncate">
+            Social Media
+          </p>
+          <p className="text-neutral-400 text-sm w-full truncate">
+            127k Likes
           </p>
         </Link>
       </div>
