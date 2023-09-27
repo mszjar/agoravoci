@@ -9,3 +9,19 @@ body,
   background-color: white;
   color-scheme: light;
 }
+
+@keyframes gradient-blue {
+  0% {
+    color: #f2f5f9;
+  }
+  50% {
+    color: #000000;
+  }
+  100% {
+    color: #000000;
+  }
+}
+
+.animated-gradient-blue {
+  animation: gradient-blue 20s ease-in-out;
+}
