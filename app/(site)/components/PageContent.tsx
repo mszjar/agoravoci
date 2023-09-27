@@ -81,8 +81,8 @@ const PageContent: React.FC<PageContentProps> = ({ songs, users }) => {
         </div>
       ) : (
         <div className="gap-x-4 items-center">
-          <div className="text-center w-full">
-            <div className="sm:flex sm:m-32 m-12 ">
+          <div className="text-center w-full sm:mt-48 mt-16">
+            <div className="sm:flex sm:m-24 m-12">
               <h1 className="sm:text-7xl text-5xl font-bold">
                 Connect. <br className="sm:hidden" />
               </h1>
@@ -102,8 +102,8 @@ const PageContent: React.FC<PageContentProps> = ({ songs, users }) => {
           </div>
           <div className="mt-24 flex justify-center">
               <Image
-                width={1000}
-                height={1000}
+                width={1300}
+                height={1300}
                 alt="image"
                 src={"/images/dashboard_preview.png"}
                 className="mt-8 rounded-xl shadow-xl"
