@@ -82,29 +82,6 @@ const Navbar: React.FC<NavbarProps> = ({
                   </h1>
                 </Link>
               </div>
-              {/* Navbar elements */}
-              <div className='hidden md:flex ml-32 justify-between gap-x-6 items-center'>
-                <Link href='/product'>
-                  <div className='text-gray-500 text-ml font-semibold'>
-                    Product
-                  </div>
-                </Link>
-                <Link href='/enterprise'>
-                  <div className='text-gray-500 text-ml font-semibold'>
-                    Enterprise
-                  </div>
-                </Link>
-                <Link href='/pricing'>
-                  <div className='text-gray-500 text-ml font-semibold'>
-                    Pricing
-                  </div>
-                </Link>
-                <Link href='/contact'>
-                  <div className='text-gray-500 text-ml font-semibold'>
-                    Contact us
-                  </div>
-                </Link>
-              </div>
             </div>
           </div>
 
