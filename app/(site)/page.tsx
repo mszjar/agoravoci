@@ -23,14 +23,6 @@ export default async function Home() {
       overflow-y-auto
     "
     >
-      <div
-      className={twMerge(`
-          h-full
-          bg-gradient-to-b
-          from-slate-300
-          p-16
-        `)}
-      ></div>
       <div className="mt-2 mb-7 px-6">
         <PageContent songs={songs} users={users} />
       </div>
